@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>zhangv.com</title>
+    <link href="https://zhangv.github.io/blog/feed.xml" rel="self" />
+    <link href="https://zhangv.github.io/blog" />
+    <updated>2022-11-16T17:25:20+08:00</updated>
+    <author>
+        <name>zhangv</name>
+    </author>
+    <id>https://zhangv.github.io/blog</id>
+
+    <entry>
+        <title>测试从wordpress切换到github-page</title>
+        <author>
+            <name>zhangv</name>
+        </author>
+        <link href="https://zhangv.github.io/blog/ce-shi-cong-wordpressqie-huan-dao-github-page.html"/>
+        <id>https://zhangv.github.io/blog/ce-shi-cong-wordpressqie-huan-dao-github-page.html</id>
+
+        <updated>2022-11-16T17:25:20+08:00</updated>
+            <summary>
+                <![CDATA[
+                    github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。 之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                
+  <p>
+    github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。
+  </p>
+
+  <p>
+    之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。
+  </p>
+            ]]>
+        </content>
+    </entry>
+</feed>
