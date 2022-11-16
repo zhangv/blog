@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>zhangv.com</title>
-    <link href="https://zhangv.github.io/blog/feed.xml" rel="self" />
-    <link href="https://zhangv.github.io/blog" />
+    <link href="https://blog.zhangv.com/feed.xml" rel="self" />
+    <link href="https://blog.zhangv.com" />
     <updated>2022-11-16T18:20:26+08:00</updated>
     <author>
         <name>zhangv</name>
     </author>
-    <id>https://zhangv.github.io/blog</id>
+    <id>https://blog.zhangv.com</id>
 
     <entry>
         <title>测试从wordpress切换到github-page</title>
         <author>
             <name>zhangv</name>
         </author>
-        <link href="https://zhangv.github.io/blog/ce-shi-cong-wordpressqie-huan-dao-github-page.html"/>
-        <id>https://zhangv.github.io/blog/ce-shi-cong-wordpressqie-huan-dao-github-page.html</id>
+        <link href="https://blog.zhangv.com/ce-shi-cong-wordpressqie-huan-dao-github-page.html"/>
+        <id>https://blog.zhangv.com/ce-shi-cong-wordpressqie-huan-dao-github-page.html</id>
 
         <updated>2022-11-16T18:20:26+08:00</updated>
             <summary>
