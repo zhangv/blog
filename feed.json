@@ -13,15 +13,15 @@
             "id": "https://zhangv.github.io/blog/ce-shi-cong-wordpressqie-huan-dao-github-page.html",
             "url": "https://zhangv.github.io/blog/ce-shi-cong-wordpressqie-huan-dao-github-page.html",
             "title": "测试从wordpress切换到github-page",
-            "summary": "github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。 之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。",
-            "content_html": "\n  <p>\n    github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。\n  </p>\n\n  <p>\n    之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。\n  </p>",
+            "summary": "github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。 之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。 暂时用的是publii，以后可以考虑jekyll什么的，再不济也可以直接用markdown+github写。关键是要写。",
+            "content_html": "\n  <p>\n    github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。\n  </p>\n\n  <p>\n    之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。\n  </p>\n\n  <p>\n    暂时用的是publii，以后可以考虑jekyll什么的，再不济也可以直接用markdown+github写。关键是要写。\n  </p>\n\n  <p>\n    \n  </p>",
             "author": {
                 "name": "zhangv"
             },
             "tags": [
             ],
             "date_published": "2022-11-16T17:25:20+08:00",
-            "date_modified": "2022-11-16T17:25:20+08:00"
+            "date_modified": "2022-11-16T18:20:26+08:00"
         }
     ]
 }
