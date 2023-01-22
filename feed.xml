@@ -3,12 +3,58 @@
     <title>weiView</title>
     <link href="https://blog.zhangv.com/feed.xml" rel="self" />
     <link href="https://blog.zhangv.com" />
-    <updated>2022-12-21T17:22:12+08:00</updated>
+    <updated>2023-01-23T01:45:00+08:00</updated>
     <author>
         <name>zhangv</name>
     </author>
     <id>https://blog.zhangv.com</id>
 
+    <entry>
+        <title>关于safe-area-inset-x的处理方式总结</title>
+        <author>
+            <name>zhangv</name>
+        </author>
+        <link href="https://blog.zhangv.com/guan-yu-safe-area-inset-xde-chu-li-fang-shi-zong-jie.html"/>
+        <id>https://blog.zhangv.com/guan-yu-safe-area-inset-xde-chu-li-fang-shi-zong-jie.html</id>
+            <category term="技术"/>
+
+        <updated>2023-01-23T01:44:03+08:00</updated>
+            <summary>
+                <![CDATA[
+                    首先什么是safe-area-inset-*？直接翻译是：安全区域内嵌上/下/左/右，意思是网页显示内容需要内嵌的方向和长度。「caniuse和mdn介绍」。比较常见的是iPhoneX开始的“刘海”（notch）和某些安卓手机的非直角屏幕显示。如下图： 为什么这是一个需要解决的问题？ 因为当页面中存在停靠在四个方向边缘的元素时，如果不预先考虑安全区域，就会造成内容的遮挡，影响功能使用和美观。比如顶部固定的功能栏、侧边悬浮的按钮、底部导航条等。 解决思路： 1. 通过设置viewport-fit:cover， &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"&gt; 优点：简单直接，可满足可视和功能，保证不会被遮挡 缺点：无法保证美观度和一些细节，可能会造成不统一的背景颜色 2. 通过设置全局css，将根容器的pandding-x设置成对应的安全区域高度， padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 优点：简单，部分解决背景不统一问题 缺点：也无法保证美观和细节 3. 根据实际情况设置一组css，根据实际情况来处理 这里总结几种情况（只以top来举例）： 1. 固定(fixed)和绝对(absolute)定位的顶部元素（通知条、顶部功能栏、左上角的返回按钮） 处理方式：top: env(safe-area-inset-top) 但这里需要注意，如果元素后面还有元素，比如header下面的content区域，由于header的top修改，会遮挡content，还需要修改相应的padding-top。（比如增加css类：below-fixed-top{padding-top:env(safe-area-inset-top)} 另一种情况，如果元素本身有top或者padding-top的设置，就需要外套一个元素来处理。这里引出了一个经验，布局框架内的根元素、第一级元素最好不要有任何top/padding-top/margin-top的设置。 2. 全局容器（高度100%，全屏弹出页） 处理方式：padding-top:env(safe-area-inset-top) 3. 普通容器 处理方式：给父容器设置padding-top:env(safe-area-inset-top)，也可以通过增加伪元素(:before)来增加一个空的元素，这种方法可以设置显示内容。 不建议使用修改高度和margin的方式来处理，因为容器内通常还存在其他元素，可能会影响显示或布局，需要更多的适配。
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>首先什么是safe-area-inset-*？直接翻译是：安全区域内嵌上/下/左/右，意思是网页显示内容需要内嵌的方向和长度。「<a href="https://caniuse.com/?search=safe-area-inset" target="_blank" rel="noopener noreferrer">caniuse和mdn介绍</a>」。比较常见的是iPhoneX开始的“刘海”（notch）和某些安卓手机的非直角屏幕显示。如下图：</p>
+<figure class="post__image"><img loading="lazy"  src="https://photo.minwt.com/img/Content/webdesign/iphone-x-css/iphone-x-css-setting_03.jpg" data-is-external-image="true"  alt=""></figure>
+<p>为什么这是一个需要解决的问题？</p>
+<p>因为当页面中存在停靠在四个方向边缘的元素时，如果不预先考虑安全区域，就会造成内容的遮挡，影响功能使用和美观。比如顶部固定的功能栏、侧边悬浮的按钮、底部导航条等。</p>
+<p>解决思路：</p>
+<p>1. 通过设置viewport-fit:cover，</p>
+<pre class=" language-markup"><code class=" language-html language-markup"><span class="token tag"><span class="token punctuation">&lt;</span>meta <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0, viewport-fit=cover<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> </code></pre>
+<p>优点：简单直接，可满足可视和功能，保证不会被遮挡</p>
+<p>缺点：无法保证美观度和一些细节，可能会造成不统一的背景颜色</p>
+<p>2. 通过设置全局css，将根容器的pandding-x设置成对应的安全区域高度，</p>
+<pre class=" language-css"><code class=" language-css"><span class="token property">padding</span><span class="token punctuation">:</span> <span class="token function">env</span><span class="token punctuation">(</span>safe-area-inset-top<span class="token punctuation">)</span> <span class="token function">env</span><span class="token punctuation">(</span>safe-area-inset-right<span class="token punctuation">)</span> <span class="token function">env</span><span class="token punctuation">(</span>safe-area-inset-bottom<span class="token punctuation">)</span> <span class="token function">env</span><span class="token punctuation">(</span>safe-area-inset-left<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>优点：简单，部分解决背景不统一问题</p>
+<p>缺点：也无法保证美观和细节</p>
+<p>3. 根据实际情况设置一组css，根据实际情况来处理</p>
+<p>这里总结几种情况（只以top来举例）：</p>
+<blockquote>
+<p>1. 固定(fixed)和绝对(absolute)定位的顶部元素（通知条、顶部功能栏、左上角的返回按钮）</p>
+<p>处理方式：top: env(safe-area-inset-top)</p>
+<p>但这里需要注意，如果元素后面还有元素，比如header下面的content区域，由于header的top修改，会遮挡content，还需要修改相应的padding-top。（比如增加css类：below-fixed-top{padding-top:env(safe-area-inset-top)}</p>
+<p>另一种情况，如果元素本身有top或者padding-top的设置，就需要外套一个元素来处理。这里引出了一个经验，布局框架内的根元素、第一级元素最好不要有任何top/padding-top/margin-top的设置。</p>
+<p>2. 全局容器（高度100%，全屏弹出页）</p>
+<p>处理方式：padding-top:env(safe-area-inset-top)</p>
+<p>3. 普通容器</p>
+<p>处理方式：给父容器设置padding-top:env(safe-area-inset-top)，也可以通过增加伪元素(:before)来增加一个空的元素，这种方法可以设置显示内容。</p>
+</blockquote>
+<p>不建议使用修改高度和margin的方式来处理，因为容器内通常还存在其他元素，可能会影响显示或布局，需要更多的适配。</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>国民时间Citizen Time</title>
         <author>
@@ -74,8 +120,10 @@
         </author>
         <link href="https://blog.zhangv.com/min-youmin-zhimin-xiang.html"/>
         <id>https://blog.zhangv.com/min-youmin-zhimin-xiang.html</id>
+            <category term="政治"/>
+            <category term="历史"/>
 
-        <updated>2022-11-30T09:53:58+08:00</updated>
+        <updated>2023-01-23T01:44:27+08:00</updated>
             <summary>
                 <![CDATA[
                     突然想起了这三个词。（我发现现在很难注意力集中较长的时间，并非总被打断，而是自己的精神力就有点差，这对思考和表达都是非常致命的。还是通过写点东西来“挣扎”一下吧） 这三个词是林肯《葛底斯堡演说》(Getteysburg Address)中提到的，原文是： The government of the people，by the people，for the people... 孙文最初将它翻译为「民有、民治、民享」 胡适的翻译是：「此主于民、出于民，而又为民之政府」 用最简单的词来定义一件事才不容易产生认知上的“波澜”或者障碍，才更适合深入人心。在这一点上，英文原版真是做到完美。而且逻辑清晰，民有说明根本和来源，民治强调过程，民享是为目标和目的。 孙的三民主义：民族、民权、民生，我理解应该是特定历史条件下的产物，但能够提出来我觉得已经很伟大了，在那样的社会、个人经历下，我们不能有过高的要求。况且在那个时期，这样的强调也合理，它并没有强调政府的意义，更多的是政治纲领。至于后来提出的新三民主义，就有点扯了。联俄联共扶助工农 - 这都是哪门子事啊。
@@ -100,11 +148,13 @@
         </author>
         <link href="https://blog.zhangv.com/shu-yu-zhong-guo-de-mo-huan-xian-shi-zhu-yi.html"/>
         <id>https://blog.zhangv.com/shu-yu-zhong-guo-de-mo-huan-xian-shi-zhu-yi.html</id>
+            <category term="历史"/>
+            <category term="中国"/>
 
-        <updated>2022-11-25T15:04:44+08:00</updated>
+        <updated>2023-01-23T01:44:48+08:00</updated>
             <summary>
                 <![CDATA[
-                    最近的三年疫情让中国的出现各种各样魔幻的事情，所谓魔幻，是那些听起来甚至看起来都不敢相信的事情太多，导致大多数人陷入一种超现实的虚无感。这种集体的虚无感，不知道会催生出什么。也许在这片土地上从古至今发生类似的事情太多了，但要知道，现在是信息时代啊，应该有最起码的科学精神作为基础啊。 为什么还有很多人要反着来呢？ 一直都持一种观点，中国人的精神状态一直都处于混沌蒙昧的状态 -- 无关知识多寡。理性很难“战胜”所谓的感官、感觉、感受。一个不理性的人需要十个理性人去“抗衡”。 希望能看到有作家可以把这三年发生的事情。
+                    最近的三年疫情让中国的出现各种各样魔幻的事情，所谓魔幻，是那些听起来甚至看起来都不敢相信的事情太多，导致大多数人陷入一种超现实的虚无感。这种集体的虚无感，不知道会催生出什么。也许在这片土地上从古至今发生类似的事情太多了，但要知道，现在是信息时代啊，应该有最起码的科学精神作为基础啊。 为什么还有很多人要反着来呢？ 一直都持一种观点，中国人的精神状态一直都处于混沌蒙昧的状态 -- 无关知识多寡。理性很难“战胜”所谓的感官、感觉、感受。一个不理性的人需要十个理性人去“抗衡”。 希望能看到有作家可以把这三年发生的事情记录下来。
                 ]]>
             </summary>
         <content type="html">
@@ -112,7 +162,7 @@
                 <p>最近的三年疫情让中国的出现各种各样魔幻的事情，所谓魔幻，是那些听起来甚至看起来都不敢相信的事情太多，导致大多数人陷入一种超现实的虚无感。这种集体的虚无感，不知道会催生出什么。也许在这片土地上从古至今发生类似的事情太多了，但要知道，现在是信息时代啊，应该有最起码的科学精神作为基础啊。</p>
 <p>为什么还有很多人要反着来呢？</p>
 <p>一直都持一种观点，中国人的精神状态一直都处于混沌蒙昧的状态 -- 无关知识多寡。理性很难“战胜”所谓的感官、感觉、感受。一个不理性的人需要十个理性人去“抗衡”。</p>
-<p>希望能看到有作家可以把这三年发生的事情。</p>
+<p>希望能看到有作家可以把这三年发生的事情记录下来。</p>
             ]]>
         </content>
     </entry>
@@ -123,8 +173,9 @@
         </author>
         <link href="https://blog.zhangv.com/zhu-chi-ren-he-jia-bin-ying-gai-ru-he-qi-he.html"/>
         <id>https://blog.zhangv.com/zhu-chi-ren-he-jia-bin-ying-gai-ru-he-qi-he.html</id>
+            <category term="随笔"/>
 
-        <updated>2022-11-17T10:37:27+08:00</updated>
+        <updated>2023-01-23T01:45:00+08:00</updated>
             <summary>
                 <![CDATA[
                     偶然在小宇宙上听到一期节目，很长。听到后面，就发现原来这个主持人和嘉宾不太“对线”，然后从内、外向的角度试图解释这个问题。 这期播客的组合是：外向女+内向男 外向女的主要特征：说话速度快、但认知有些偏差、之前的工作经历主要是海归+精英办公族、可能年龄也比嘉宾轻一些。 内向男的主要特征：说话慢，但认知比较正常、也有很多经历、多年前移民海外。 没有意愿贬低女性或者标签女性，主要还是从我作为听众的感受来分析。 所谓内向和外向，主要是说人的驱动力来自哪里？所以一个外向的人，通常的认知提升是需要外界“助力”的，或者说是比较“现实功利”的，当“功利”出现时，就会要考虑效率 -- 如何快速地提升认知/知识。这种“效率”的追求很容易让人陷入一个陷阱。获得表层的，不够深入的知识，而不是深入的认知。所以外向的人，反而需要更长的时间觉知，因为依赖外部。 其实无论内向、外向，我们每个人阅读、与人交流其实都是一个从外界获取知识的过程。但内向的人更倾向于不那么功利地获取知识，也不那么讲究效率地去把知识转化成认知（或者利益）。因为我阅读不是为了别人，是为了自己。这也是很多内向的人会说，阅读是一件非常私人的事（但可以分享），甚至认为是个人隐私（不可以分享）。 说回主题，主持人和嘉宾的组合，如果是偏外向的的主持人，可能需要一定的阅历和认知高度的，必须要包容到对方（比如洪晃），这种情况下，嘉宾认知高低都可以。如果是偏内向的主持人，就会好一些，即便认知水平不太够，至少也不会太明显的影响节目效果。反而如果认知足够（比如老六、梁文道），反而能够和嘉宾一起“开疆拓土”，虽然说话慢吞吞看起来不所谓”专业“。
