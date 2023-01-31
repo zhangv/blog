@@ -3,12 +3,60 @@
     <title>weiView</title>
     <link href="https://blog.zhangv.com/feed.xml" rel="self" />
     <link href="https://blog.zhangv.com" />
-    <updated>2023-01-23T01:45:00+08:00</updated>
+    <updated>2023-02-01T01:07:02+08:00</updated>
     <author>
         <name>zhangv</name>
     </author>
     <id>https://blog.zhangv.com</id>
 
+    <entry>
+        <title>关于Material Design中UI的配色问题</title>
+        <author>
+            <name>zhangv</name>
+        </author>
+        <link href="https://blog.zhangv.com/guan-yu-material-designzhong-uide-pei-se-wen-ti.html"/>
+        <id>https://blog.zhangv.com/guan-yu-material-designzhong-uide-pei-se-wen-ti.html</id>
+            <category term="设计"/>
+            <category term="技术"/>
+
+        <updated>2023-02-01T01:07:02+08:00</updated>
+            <summary>
+                <![CDATA[
+                    最近几年用Vuetify比较多，Vuetify是基于Material Design的一套前端UI脚手架系统，整个MD的配色系统是比较科学的，它定义了五个核心颜色： 此外就是自定义的颜色了，主要是根据功能性来划分，在Vuetify中有：error、info、success、accent、warning，需要设计师根据核心色调整。 针对于易读性问题，要保证强调色(primary/secondary/tertiary)和基底色（neutral/neutral variant)有足够的对比度，可以部分的通过生成来解决。 对一个专注于功能开发的程序员来说，MD的这套配色系统至少提供了一套可复用的配色逻辑： （注：MD是基于孟塞尔颜色系统(Munsell color system)，主要是是基于： 1. hue - 色相/色调,颜色在色轮中的位置（一共360个位置） 2. saturation饱和度、也叫色彩强度（intensity）或色度（chroma）-越高越强烈，越低越暗淡 3.value色值，颜色的深浅，混入黑色让颜色变深（shade）、混入白色让颜色发白（tint）、混入灰色使颜色偏灰(tone) 以一个基本图片出发 先获取主色（primary），也就是图片中最多的颜色（获得HCT中的H - hue色相） 然后根据primary生成secondary和tertiary（如饱和度减弱） 然后根据primary生成neutral和neutral variant（增加/减少灰度） 其他自定义色： success - 通常选绿色或者暖色，根据主色增加饱和度 warning - 通常选桔黄色，可暖可冷，如主色的对比色 error - 通常选红色，根据注册调整饱和度和灰度 info - 选个人畜无害的颜色，我一般很少用 accent - error和warning中间的颜色，如果二者接近，可考虑neutral的对比色 总之，MD的配色系统还是考虑到很多的，如果稍微多了解一些颜色配色基础，即便不是设计师也能做出不那么难看（难看如微信）的UI了。 参考： Material Design Color System&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>最近几年用Vuetify比较多，Vuetify是基于Material Design的一套前端UI脚手架系统，整个MD的配色系统是比较科学的，它定义了五个核心颜色：</p>
+<ul>
+<li>primary - 主要元素的颜色（背景或者边框，如页面中的「确认支付」按钮）</li>
+<li>secondary - 次要元素颜色（同样是以背景或者边框，如页面中的后退、分享、过滤按钮）</li>
+<li>tertiary - 再次元素颜色（一般就比较少用了，除非是比较复杂的页面）</li>
+<li>neutral - 通常用来做背景或表面，也作为文本和图标的强调色</li>
+<li>neutral variant - 主要是用来作为中等强调的组件或者边缘和文字</li>
+</ul>
+<p>此外就是自定义的颜色了，主要是根据功能性来划分，在Vuetify中有：error、info、success、accent、warning，需要设计师根据核心色调整。</p>
+<p>针对于易读性问题，要保证强调色(primary/secondary/tertiary)和基底色（neutral/neutral variant)有足够的对比度，可以部分的通过生成来解决。</p>
+<p>对一个专注于功能开发的程序员来说，MD的这套配色系统至少提供了一套可复用的配色逻辑：</p>
+<pre>（注：MD是基于孟塞尔颜色系统(Munsell color system)，主要是是基于：<br><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">1. hue - 色相/色调,颜色在色轮中的位置（一共360个位置）<br></span><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">2. saturation饱和度、也叫色彩强度（intensity）或色度（chroma）-越高越强烈，越低越暗淡<br></span>3.value色值，颜色的深浅，混入黑色让颜色变深（shade）、混入白色让颜色发白（tint）、混入灰色使颜色偏灰(tone)</pre>
+<ol>
+<li>以一个基本图片出发</li>
+<li>先获取主色（primary），也就是图片中最多的颜色（获得HCT中的H - hue色相）</li>
+<li>然后根据primary生成secondary和tertiary（如饱和度减弱）</li>
+<li>然后根据primary生成neutral和neutral variant（增加/减少灰度）</li>
+<li>其他自定义色：<br>success -  通常选绿色或者暖色，根据主色增加饱和度<br>warning - 通常选桔黄色，可暖可冷，如主色的对比色<br>error - 通常选红色，根据注册调整饱和度和灰度<br>info - 选个人畜无害的颜色，我一般很少用<br>accent - error和warning中间的颜色，如果二者接近，可考虑neutral的对比色</li>
+</ol>
+<p>总之，MD的配色系统还是考虑到很多的，如果稍微多了解一些颜色配色基础，即便不是设计师也能做出不那么难看（难看如微信）的UI了。</p>
+<p>参考：</p>
+<ol>
+<li><a href="https://m3.material.io/styles/color/overview" target="_blank" rel="noopener noreferrer">Material Design Color System</a></li>
+<li><a href="https://m3.material.io/theme-builder#/dynamic">Material Design Theme Builder（主题生成器）</a></li>
+<li><a href="https://www.woshipm.com/pd/4928465.html">B端设计 | 设计师必须了解的色彩系统搭建</a></li>
+<li>《贝蒂的色彩》</li>
+</ol>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>关于safe-area-inset-x的处理方式总结</title>
         <author>
@@ -18,10 +66,10 @@
         <id>https://blog.zhangv.com/guan-yu-safe-area-inset-xde-chu-li-fang-shi-zong-jie.html</id>
             <category term="技术"/>
 
-        <updated>2023-01-23T01:44:03+08:00</updated>
+        <updated>2023-01-23T18:44:10+08:00</updated>
             <summary>
                 <![CDATA[
-                    首先什么是safe-area-inset-*？直接翻译是：安全区域内嵌上/下/左/右，意思是网页显示内容需要内嵌的方向和长度。「caniuse和mdn介绍」。比较常见的是iPhoneX开始的“刘海”（notch）和某些安卓手机的非直角屏幕显示。如下图： 为什么这是一个需要解决的问题？ 因为当页面中存在停靠在四个方向边缘的元素时，如果不预先考虑安全区域，就会造成内容的遮挡，影响功能使用和美观。比如顶部固定的功能栏、侧边悬浮的按钮、底部导航条等。 解决思路： 1. 通过设置viewport-fit:cover， &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"&gt; 优点：简单直接，可满足可视和功能，保证不会被遮挡 缺点：无法保证美观度和一些细节，可能会造成不统一的背景颜色 2. 通过设置全局css，将根容器的pandding-x设置成对应的安全区域高度， padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 优点：简单，部分解决背景不统一问题 缺点：也无法保证美观和细节 3. 根据实际情况设置一组css，根据实际情况来处理 这里总结几种情况（只以top来举例）： 1. 固定(fixed)和绝对(absolute)定位的顶部元素（通知条、顶部功能栏、左上角的返回按钮） 处理方式：top: env(safe-area-inset-top) 但这里需要注意，如果元素后面还有元素，比如header下面的content区域，由于header的top修改，会遮挡content，还需要修改相应的padding-top。（比如增加css类：below-fixed-top{padding-top:env(safe-area-inset-top)} 另一种情况，如果元素本身有top或者padding-top的设置，就需要外套一个元素来处理。这里引出了一个经验，布局框架内的根元素、第一级元素最好不要有任何top/padding-top/margin-top的设置。 2. 全局容器（高度100%，全屏弹出页） 处理方式：padding-top:env(safe-area-inset-top) 3. 普通容器 处理方式：给父容器设置padding-top:env(safe-area-inset-top)，也可以通过增加伪元素(:before)来增加一个空的元素，这种方法可以设置显示内容。 不建议使用修改高度和margin的方式来处理，因为容器内通常还存在其他元素，可能会影响显示或布局，需要更多的适配。
+                    首先什么是safe-area-inset-*？直接翻译是：安全区域内嵌上/下/左/右，意思是网页显示内容需要内嵌的方向和长度。「caniuse和mdn介绍」。比较常见的是iPhoneX开始的“刘海”（notch）和某些安卓手机的非直角屏幕显示。如下图： 为什么这是一个需要解决的问题？ 因为当页面中存在停靠在四个方向边缘的元素时，如果不预先考虑安全区域，就会造成内容的遮挡，影响功能使用和美观。比如顶部固定的功能栏、侧边悬浮的按钮、底部导航条等。 解决思路： 1. 通过设置viewport-fit:cover(铺满） | contain（包含） &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"&gt; 优点：简单直接，可满足可视和功能，保证不会被遮挡 缺点：无法保证美观度和一些细节，可能会造成不统一的背景颜色 2. 通过设置全局css，将根容器的pandding-x设置成对应的安全区域高度， padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 优点：简单，部分解决背景不统一问题 缺点：也无法保证美观和细节 3. 根据实际情况设置一组css，根据实际情况来处理 这里总结几种情况（只以top来举例）： 1. 固定(fixed)和绝对(absolute)定位的顶部元素（通知条、顶部功能栏、左上角的返回按钮） 处理方式：top: env(safe-area-inset-top) 但这里需要注意，如果元素后面还有元素，比如header下面的content区域，由于header的top修改，会遮挡content，还需要修改相应的padding-top。（比如增加css类：below-fixed-top{padding-top:env(safe-area-inset-top)} 另一种情况，如果元素本身有top或者padding-top的设置，就需要外套一个元素来处理。这里引出了一个经验，布局框架内的根元素、第一级元素最好不要有任何top/padding-top/margin-top的设置。 2. 全局容器（高度100%，全屏弹出页） 处理方式：padding-top:env(safe-area-inset-top) 3. 普通容器 处理方式：给父容器设置padding-top:env(safe-area-inset-top)，也可以通过增加伪元素(:before)来增加一个空的元素，这种方法可以设置显示内容。 不建议使用修改高度和margin的方式来处理，因为容器内通常还存在其他元素，可能会影响显示或布局，需要更多的适配。
                 ]]>
             </summary>
         <content type="html">
@@ -31,7 +79,7 @@
 <p>为什么这是一个需要解决的问题？</p>
 <p>因为当页面中存在停靠在四个方向边缘的元素时，如果不预先考虑安全区域，就会造成内容的遮挡，影响功能使用和美观。比如顶部固定的功能栏、侧边悬浮的按钮、底部导航条等。</p>
 <p>解决思路：</p>
-<p>1. 通过设置viewport-fit:cover，</p>
+<p>1. 通过设置viewport-fit:cover(铺满） | contain（包含）</p>
 <pre class=" language-markup"><code class=" language-html language-markup"><span class="token tag"><span class="token punctuation">&lt;</span>meta <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0, viewport-fit=cover<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> </code></pre>
 <p>优点：简单直接，可满足可视和功能，保证不会被遮挡</p>
 <p>缺点：无法保证美观度和一些细节，可能会造成不统一的背景颜色</p>
