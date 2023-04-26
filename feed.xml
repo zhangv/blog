@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>weiView</title>
     <link href="https://blog.zhangv.com/feed.xml" rel="self" />
     <link href="https://blog.zhangv.com" />
-    <updated>2023-03-23T11:51:30+08:00</updated>
+    <updated>2023-04-27T03:37:51+08:00</updated>
     <author>
         <name>zhangv</name>
     </author>
     <id>https://blog.zhangv.com</id>
 
+    <entry>
+        <title>悲观是一种情绪，乐观是一种思路</title>
+        <author>
+            <name>zhangv</name>
+        </author>
+        <link href="https://blog.zhangv.com/bei-guan-shi-yi-zhong-qing-xule-guan-shi-yi-zhong-si-lu.html"/>
+        <id>https://blog.zhangv.com/bei-guan-shi-yi-zhong-qing-xule-guan-shi-yi-zhong-si-lu.html</id>
+            <category term="读书"/>
+            <category term="思考"/>
+
+        <updated>2023-04-27T03:37:51+08:00</updated>
+            <summary>
+                <![CDATA[
+                    在《茑屋经营哲学》即将看完时看到了这句话，源自法国哲学家艾伦（没有找到具体的出处，猜想应该是雷蒙·埃隆，《知识分子的鸦片》作者）。恨不得马上拿出手机记下来，后来索性打开电脑，写点什么。 一直以来都认为悲观是因为「看过去」，而乐观是因为「看未来」，更多的是从看待事情的结果来区分，比如过去的成功/美好，而当下的不成功/不美好，再到寄希望于未来的可能的成功/美好。 情绪和思路，是一个之前没有注意到的视角。但是却让我非常“费解”，尤其是后半句“乐观是一种思路”，对一个我这种语言有些洁癖的人来说，情绪和思路完全是两种东西，则么能在这里相提并论呢？难受。虽然分开来解释很容易理解，但放到一句话里就是特别别扭。考虑去找找原文的出处和原文仔细辨析一下。 情绪是不解决问题的，或者仅仅是对压力的一种释放或抵抗；而思路则是奔着解决问题而去的，或者说是行动。情绪最常见的表达方式或者动作是“说”。如果从这个角度理解，重新组织一下：悲观是只说不做，乐观是马上去做。 那么我们可以认定：一个只说不做的人就是一个悲观的人，或者一个悲观的人只说不做。
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>在《茑屋经营哲学》即将看完时看到了这句话，源自法国哲学家艾伦（没有找到具体的出处，猜想应该是雷蒙·埃隆，《知识分子的鸦片》作者）。恨不得马上拿出手机记下来，后来索性打开电脑，写点什么。</p>
+<p>一直以来都认为悲观是因为「看过去」，而乐观是因为「看未来」，更多的是从看待事情的结果来区分，比如过去的成功/美好，而当下的不成功/不美好，再到寄希望于未来的可能的成功/美好。</p>
+<p>情绪和思路，是一个之前没有注意到的视角。但是却让我非常“费解”，尤其是后半句“乐观是一种思路”，对一个我这种语言有些洁癖的人来说，情绪和思路完全是两种东西，则么能在这里相提并论呢？难受。虽然分开来解释很容易理解，但放到一句话里就是特别别扭。考虑去找找原文的出处和原文仔细辨析一下。</p>
+<p>情绪是不解决问题的，或者仅仅是对压力的一种释放或抵抗；而思路则是奔着解决问题而去的，或者说是行动。情绪最常见的表达方式或者动作是“说”。如果从这个角度理解，重新组织一下：悲观是只说不做，乐观是马上去做。</p>
+<p>那么我们可以认定：一个只说不做的人就是一个悲观的人，或者一个悲观的人只说不做。</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Quasar历险记</title>
         <author>
@@ -133,7 +160,7 @@
         <content type="html">
             <![CDATA[
                 <p>首先什么是safe-area-inset-*？直接翻译是：安全区域内嵌上/下/左/右，意思是网页显示内容需要内嵌的方向和长度。「<a href="https://caniuse.com/?search=safe-area-inset" target="_blank" rel="noopener noreferrer">caniuse和mdn介绍</a>」。比较常见的是iPhoneX开始的“刘海”（notch）和某些安卓手机的非直角屏幕显示。如下图：</p>
-<figure class="post__image"><img loading="lazy"  src="https://photo.minwt.com/img/Content/webdesign/iphone-x-css/iphone-x-css-setting_03.jpg" data-is-external-image="true"  alt=""></figure>
+<figure class="post__image"><img loading="lazy"  src="https://photo.minwt.com/img/Content/webdesign/iphone-x-css/iphone-x-css-setting_03.jpg" alt="" data-is-external-image="true"></figure>
 <p>为什么这是一个需要解决的问题？</p>
 <p>因为当页面中存在停靠在四个方向边缘的元素时，如果不预先考虑安全区域，就会造成内容的遮挡，影响功能使用和美观。比如顶部固定的功能栏、侧边悬浮的按钮、底部导航条等。</p>
 <p>解决思路：</p>
@@ -298,41 +325,6 @@
 <p>所谓内向和外向，主要是说人的驱动力来自哪里？所以一个外向的人，通常的认知提升是需要外界“助力”的，或者说是比较“现实功利”的，当“功利”出现时，就会要考虑效率 -- 如何快速地提升认知/知识。这种“效率”的追求很容易让人陷入一个陷阱。获得表层的，不够深入的知识，而不是深入的认知。所以外向的人，反而需要更长的时间觉知，因为依赖外部。</p>
 <p>其实无论内向、外向，我们每个人阅读、与人交流其实都是一个从外界获取知识的过程。但内向的人更倾向于不那么功利地获取知识，也不那么讲究效率地去把知识转化成认知（或者利益）。因为我阅读不是为了别人，是为了自己。这也是很多内向的人会说，阅读是一件非常私人的事（但可以分享），甚至认为是个人隐私（不可以分享）。</p>
 <p>说回主题，主持人和嘉宾的组合，如果是偏外向的的主持人，可能需要一定的阅历和认知高度的，必须要包容到对方（比如洪晃），这种情况下，嘉宾认知高低都可以。如果是偏内向的主持人，就会好一些，即便认知水平不太够，至少也不会太明显的影响节目效果。反而如果认知足够（比如老六、梁文道），反而能够和嘉宾一起“开疆拓土”，虽然说话慢吞吞看起来不所谓”专业“。</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>测试从wordpress切换到github-page</title>
-        <author>
-            <name>zhangv</name>
-        </author>
-        <link href="https://blog.zhangv.com/ce-shi-cong-wordpressqie-huan-dao-github-page.html"/>
-        <id>https://blog.zhangv.com/ce-shi-cong-wordpressqie-huan-dao-github-page.html</id>
-
-        <updated>2022-11-16T18:20:26+08:00</updated>
-            <summary>
-                <![CDATA[
-                    github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。 之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。 暂时用的是publii，以后可以考虑jekyll什么的，再不济也可以直接用markdown+github写。关键是要写。
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                
-  <p>
-    github-page比较好的一点是，还可以有很多其他的选择，并且内容保存也比较方便。
-  </p>
-
-  <p>
-    之前在digitalocean上部署，虽说简单，但还是需要维护数据和样式什么。本来也没有很复杂的格式需求，也对样式没有太特殊的偏好。拖了很久，直接搞起来。
-  </p>
-
-  <p>
-    暂时用的是publii，以后可以考虑jekyll什么的，再不济也可以直接用markdown+github写。关键是要写。
-  </p>
-
-  <p>
-    
-  </p>
             ]]>
         </content>
     </entry>
