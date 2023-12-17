@@ -3,12 +3,32 @@
     <title>weiView</title>
     <link href="https://blog.zhangv.com/feed.xml" rel="self" />
     <link href="https://blog.zhangv.com" />
-    <updated>2023-11-01T23:53:18+08:00</updated>
+    <updated>2023-12-17T10:31:26+08:00</updated>
     <author>
         <name>zhangv</name>
     </author>
     <id>https://blog.zhangv.com</id>
 
+    <entry>
+        <title>Publii终于可以正常工作了</title>
+        <author>
+            <name>zhangv</name>
+        </author>
+        <link href="https://blog.zhangv.com/publiizhong-yu-ke-yi-zheng-chang-gong-zuo-liao.html"/>
+        <id>https://blog.zhangv.com/publiizhong-yu-ke-yi-zheng-chang-gong-zuo-liao.html</id>
+
+        <updated>2023-12-17T10:31:26+08:00</updated>
+            <summary>
+                <![CDATA[
+                    Finally.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Finally.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Publii无法sync</title>
         <author>
@@ -277,34 +297,6 @@
 </blockquote>
 <p>不建议使用修改高度和margin的方式来处理，因为容器内通常还存在其他元素，可能会影响显示或布局，需要更多的适配。</p>
 <p>特殊情况1:<br>比如在通常的fixed的左上角按钮，如果在其下部也有fixed的元素，则需要相应的下移。只能通过hardcode处理。</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>国民时间Citizen Time</title>
-        <author>
-            <name>zhangv</name>
-        </author>
-        <link href="https://blog.zhangv.com/guo-min-shi-jian.html"/>
-        <id>https://blog.zhangv.com/guo-min-shi-jian.html</id>
-            <category term="随笔"/>
-            <category term="国民时间"/>
-
-        <updated>2022-12-21T17:22:12+08:00</updated>
-            <summary>
-                <![CDATA[
-                    通常用来衡量一国人民的生活水平，会用人均可支配收入之类的指标，但是即便是统计出来又能怎样？有什么参考意义？对一个公民来说，这个数值除了能在变化时彰显进步以外，似乎没有什么卵用。（这个数值通常只有在增长时候，才会听到，否则就没有人提及）。 前段时间读到2022全球幸福报告（World Happiness Report），中国的排名是72（一共146个国家），这个幸福指数主要指标是：单位生产总值（GDP per capita）、社会扶助（Social Support）、健康预期寿命（Healthy Life Expectancy）、生活自主选择（Freedom to make life choices）、公益投入（Generosity）、腐败（Perception of Corruption）。 从个人角度来看，这些除了能够提供一点点日常辩论的话题以外，似乎没有什么实质，而且最终辩论总是会回到这个东西是谁编制的，是不是有什么偏见这些问题上。不了了之。 所有，最近这一两年就在思考，我们在制定政策时候，是否可以考虑「国民时间」作为一个衡量要素。比如，我要修缮一条高速公路，那么在维修期间，会造成多少国民的时间损失，比如由于不得不绕道而产生的额外时间成本，将这一指标作为维修项目的完成考核内容，或者加入到成本中去。 再比如，类似国民级别的网站或者APP，在设计一个弹窗的推广活动时，需要除了开发时间成本以外，还需要考虑在活动期间这个弹窗对非目标用户的干扰，其实也可以很容易地去推测，虽然可能是1-2秒的耽搁，但是由于影响到的用户太多了，就会触发到国民时间的浪费了。如果我们在设计产品时候能把这个维度加上，那么至少会是对整个国民的一个负责。如果每个人心中都能有这根弦，也就不会产生那么多“推粪上山”的事情了。 其实「国民时间」主要是想强调的是很多年以来，我们对国民时间的漠视，其实时间就是生命、有更多的时间就意味着更多的选择，如果我们把时间都浪费在不必要的排队、无意义的揣摩、过分的互相猜忌上，我们的有效生存时间就会变少，幸福感自然会少，只会产生更多的虚无感和无力感。 面对这种虚无感和无力感，在以前，我会把它当成一种借口 -- 少我一个不少，多我一个不多。但是现在，我认为每个人都应该积极去看待这件事。
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>通常用来衡量一国人民的生活水平，会用人均可支配收入之类的指标，但是即便是统计出来又能怎样？有什么参考意义？对一个公民来说，这个数值除了能在变化时彰显进步以外，似乎没有什么卵用。（这个数值通常只有在增长时候，才会听到，否则就没有人提及）。</p>
-<p>前段时间读到2022全球幸福报告（World Happiness Report），中国的排名是72（一共146个国家），这个幸福指数主要指标是：单位生产总值（GDP per capita）、社会扶助（Social Support）、健康预期寿命（Healthy Life Expectancy）、生活自主选择（Freedom to make life choices）、公益投入（Generosity）、腐败（Perception of Corruption）。</p>
-<p>从个人角度来看，这些除了能够提供一点点日常辩论的话题以外，似乎没有什么实质，而且最终辩论总是会回到这个东西是谁编制的，是不是有什么偏见这些问题上。不了了之。</p>
-<p>所有，最近这一两年就在思考，我们在制定政策时候，是否可以考虑「国民时间」作为一个衡量要素。比如，我要修缮一条高速公路，那么在维修期间，会造成多少国民的时间损失，比如由于不得不绕道而产生的额外时间成本，将这一指标作为维修项目的完成考核内容，或者加入到成本中去。</p>
-<p>再比如，类似国民级别的网站或者APP，在设计一个弹窗的推广活动时，需要除了开发时间成本以外，还需要考虑在活动期间这个弹窗对非目标用户的干扰，其实也可以很容易地去推测，虽然可能是1-2秒的耽搁，但是由于影响到的用户太多了，就会触发到国民时间的浪费了。如果我们在设计产品时候能把这个维度加上，那么至少会是对整个国民的一个负责。如果每个人心中都能有这根弦，也就不会产生那么多“推粪上山”的事情了。</p>
-<p>其实「国民时间」主要是想强调的是很多年以来，我们对国民时间的漠视，其实时间就是生命、有更多的时间就意味着更多的选择，如果我们把时间都浪费在不必要的排队、无意义的揣摩、过分的互相猜忌上，我们的有效生存时间就会变少，幸福感自然会少，只会产生更多的虚无感和无力感。</p>
-<p>面对这种虚无感和无力感，在以前，我会把它当成一种借口 -- 少我一个不少，多我一个不多。但是现在，我认为每个人都应该积极去看待这件事。</p>
             ]]>
         </content>
     </entry>
