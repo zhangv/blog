@@ -10,6 +10,22 @@
     },
     "items": [
         {
+            "id": "https://blog.zhangv.com/chinese-old-man.html",
+            "url": "https://blog.zhangv.com/chinese-old-man.html",
+            "title": "Chinese Old Man",
+            "summary": "偶然地，在X上看到一段关于中国“老”男人的话，大意是：中国的老男人的精神状态 - 自认为通晓一切，盲目地自洽于自己的世界，不接受任何不同意见更别提批评了。 看到这句话后，我陷入持久地畏惧中，畏惧自己会不会变成一个COM，怀疑自己是不是某些情绪或者话语来自于我内心那个COM。 恰好，偶然刷到冯唐的一个视频，大意是让人不要去参加任何对身体有危险的运动，比如滑雪、极限运动等（没有看的很仔细，可能只是针对成年人？）。冯唐这个COM道出了为什么盛产COM的主要原因：对生命过度的贪婪。（也解释了为什么中国人热衷各种奇奇怪怪的养生观念，有些根本毫无科学依据，甚至逻辑上都狗屁不通。） 这就引出了另一个问题？为什么会有COM？是什么造就了COM？COM有什么问题吗？有它存在的意义吗？ 如果从全人类的角度来说，凡事皆有意义，因为人类现在是存在的。但如果从人类个体来看，我们又要尊重个人选择，也无法对他人进行价值判断。那么现在下来，只剩下自己的感官感受了。 如开头我的担忧，我个人很讨厌COM，也不希望自己变成COM。似乎并不容易避免，一部分是先天的原因，一部分是环境的原因。如何保持“出污泥而不染”？ 我陷入了深深的自卑。",
+            "content_html": "<p>偶然地，在X上看到一段关于中国“老”男人的话，大意是：中国的老男人的精神状态 - 自认为通晓一切，盲目地自洽于自己的世界，不接受任何不同意见更别提批评了。</p>\n<p>看到这句话后，我陷入持久地畏惧中，畏惧自己会不会变成一个COM，怀疑自己是不是某些情绪或者话语来自于我内心那个COM。</p>\n<p>恰好，偶然刷到冯唐的一个视频，大意是让人不要去参加任何对身体有危险的运动，比如滑雪、极限运动等（没有看的很仔细，可能只是针对成年人？）。冯唐这个COM道出了为什么盛产COM的主要原因：对生命过度的贪婪。（也解释了为什么中国人热衷各种奇奇怪怪的养生观念，有些根本毫无科学依据，甚至逻辑上都狗屁不通。）</p>\n<p>这就引出了另一个问题？为什么会有COM？是什么造就了COM？COM有什么问题吗？有它存在的意义吗？</p>\n<p>如果从全人类的角度来说，凡事皆有意义，因为人类现在是存在的。但如果从人类个体来看，我们又要尊重个人选择，也无法对他人进行价值判断。那么现在下来，只剩下自己的感官感受了。</p>\n<p>如开头我的担忧，我个人很讨厌COM，也不希望自己变成COM。似乎并不容易避免，一部分是先天的原因，一部分是环境的原因。如何保持“出污泥而不染”？</p>\n<p>我陷入了深深的自卑。</p>",
+            "author": {
+                "name": "zhangv"
+            },
+            "tags": [
+                   "思考",
+                   "COM"
+            ],
+            "date_published": "2024-07-29T01:17:45+08:00",
+            "date_modified": "2024-07-29T01:17:45+08:00"
+        },
+        {
             "id": "https://blog.zhangv.com/ji-qi-shi-jue.html",
             "url": "https://blog.zhangv.com/ji-qi-shi-jue.html",
             "title": "机器视觉",
@@ -136,23 +152,6 @@
             ],
             "date_published": "2023-04-27T03:37:51+08:00",
             "date_modified": "2023-04-27T03:37:51+08:00"
-        },
-        {
-            "id": "https://blog.zhangv.com/quasarli-xian-ji.html",
-            "url": "https://blog.zhangv.com/quasarli-xian-ji.html",
-            "title": "Quasar历险记",
-            "summary": "最近有一个新项目，想尝试一下Quasar，据说是一个很好的hybrid框架，由于之前尝试过用cordova + vuejs 开发hybrid APP，并且体验还不错，恰好Quasar又是基于vuejs，且支持cordova。考虑了一下，就入坑了，没准顺便就升级vuejs3了。开始，还是很和谐的，非常快，Quasar的文档也很赞。 直到第二天，当我发现发布到testflight上的iOS版本打开是白屏，可是在开发模式下(quasar dev -m ios）时是很正常的呀？由于之前遇到过类似的问题： 1. vue-router的用了history模式，而不是hash模式 这个仔细排查，通过（quasar inspect）仔细查看生成的vite配置，非常确定vue-router相关的路径配置是正确的。 2. 发生了js报错 打开safari的开发调试工具，查看iOS中的报错，发现是被CORS掉了。很奇怪，之前用cordova时候没有遇到这个问题呀？ 于是看到，在vite构建时会生成js文件并注入到index.html中，其中对js的文件引用采用的方式是\" type=module crossorigin \"，而这就会触发CORS检查。官方文档是这么解释的。天真的我，试着写了一个vite插件去删除掉这两个属性，但是却会造成无法使用export关键字的问题。 也尝试了将build.target改为各种低于es2019的版本，都无效。 而由于在cordova中是文件系统，这里就会产生一个很无解的情况。 接下来，只能再尝试一下使用webpack而不是vite去构建（因为有之前的成功项目作为背书），但可能会面临一系列版本冲突，webpack生成的js确实和vite不一样，且引用方式也不同。但是还没有功夫研究区别在哪里，只能考虑是否要用webpack再试试。 2023-4-28更新 采用Quasar的webpack模式初始化项目是可以的。 又继续调查了一下，在config.xml中加入： &lt;preference name=\"scheme\" value=\"app\" /&gt; &lt;preference name=\"hostname\" value=\"localhost\" /&gt; 也是可以的。参考",
-            "content_html": "<p>最近有一个新项目，想尝试一下Quasar，据说是一个很好的hybrid框架，由于之前尝试过用cordova + vuejs 开发hybrid APP，并且体验还不错，恰好Quasar又是基于vuejs，且支持cordova。考虑了一下，就入坑了，没准顺便就升级vuejs3了。开始，还是很和谐的，非常快，Quasar的文档也很赞。</p>\n<p>直到第二天，当我发现发布到testflight上的iOS版本打开是白屏，可是在开发模式下(quasar dev -m ios）时是很正常的呀？由于之前遇到过类似的问题：</p>\n<p>1. vue-router的用了history模式，而不是hash模式</p>\n<p>这个仔细排查，通过（quasar inspect）仔细查看生成的vite配置，非常确定vue-router相关的路径配置是正确的。</p>\n<p>2. 发生了js报错</p>\n<p>打开safari的开发调试工具，查看iOS中的报错，发现是被CORS掉了。很奇怪，之前用cordova时候没有遇到这个问题呀？</p>\n<p>于是看到，在vite构建时会生成js文件并注入到index.html中，其中对js的文件引用采用的方式是\" type=module crossorigin \"，而这就会触发CORS检查。官方文档是<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#applying_the_module_to_your_html\" target=\"_blank\" rel=\"noopener noreferrer\">这么解释</a>的。天真的我，试着写了一个vite插件去删除掉这两个属性，但是却会造成无法使用export关键字的问题。</p>\n<p>也尝试了将build.target改为各种低于es2019的版本，都无效。</p>\n<p>而由于在cordova中是文件系统，这里就会产生一个很无解的情况。</p>\n<p>接下来，只能再尝试一下使用webpack而不是vite去构建（因为有之前的成功项目作为背书），但可能会面临一系列版本冲突，webpack生成的js确实和vite不一样，且引用方式也不同。但是还没有功夫研究区别在哪里，只能考虑是否要用webpack再试试。</p>\n<p>2023-4-28更新<br>采用Quasar的webpack模式初始化项目是可以的。</p>\n<p>又继续调查了一下，在config.xml中加入：</p>\n<div>\n<div>&lt;preference name=\"scheme\" value=\"app\" /&gt;</div>\n<div>&lt;preference name=\"hostname\" value=\"localhost\" /&gt;</div>\n<div>也是可以的。<a href=\"https://www.mathew-paul.nz/posts/cordova-webview-schemes-and-protocols/\" target=\"_blank\" rel=\"noopener noreferrer\">参考</a></div>\n</div>",
-            "author": {
-                "name": "zhangv"
-            },
-            "tags": [
-                   "技术",
-                   "quasar",
-                   "cordova"
-            ],
-            "date_published": "2023-03-22T11:00:53+08:00",
-            "date_modified": "2023-04-28T13:43:31+08:00"
         }
     ]
 }
