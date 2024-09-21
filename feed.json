@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://blog.zhangv.com/ce-shi-publii.html",
+            "url": "https://blog.zhangv.com/ce-shi-publii.html",
+            "title": "测试publii",
+            "summary": "如果一定要保留用github-page的话 只能切换到jekyl了",
+            "content_html": "<p>如果一定要保留用github-page的话</p>\n<p>只能切换到jekyl了</p>",
+            "author": {
+                "name": "zhangv"
+            },
+            "tags": [
+            ],
+            "date_published": "2024-09-21T16:54:39+08:00",
+            "date_modified": "2024-09-21T16:54:39+08:00"
+        },
+        {
             "id": "https://blog.zhangv.com/wo-men-xue-de-da-duo-shu-du-shi-ren-lei-xue.html",
             "url": "https://blog.zhangv.com/wo-men-xue-de-da-duo-shu-du-shi-ren-lei-xue.html",
             "title": "我们学的大多数都是人类学",
@@ -135,21 +149,6 @@
             ],
             "date_published": "2023-10-17T10:49:46+08:00",
             "date_modified": "2023-10-17T11:42:40+08:00"
-        },
-        {
-            "id": "https://blog.zhangv.com/beef.html",
-            "url": "https://blog.zhangv.com/beef.html",
-            "title": "BEEF",
-            "summary": "最近看了一部10集的美剧BEEF，纯粹是因为黄阿丽去看的。等一下，去查查BEEF到底是什么的缩写（随着年龄的增长，似乎好奇心也衰减了，居然看完才会去查一个不认识的缩写），当然不是牛肉的意思了。这里应是“不满，结下梁子”的意思。中文译为“怒呛人生”，很信达雅。 剧中的主要人物一水的亚裔ABC，华裔、韩裔、日裔集齐了。而且老中青都有，还是非常具有代表性的，而且编导团队也好几个亚裔。 看完以后，似乎能够体会到亚裔族群，在美国社会里的一种困境远不是自己之前想象的那样。相对还是封闭的，尤其是还要应对上一代家族那种掌控感。我能想到的最主要的一个词是：自私。 这里的自私，指的是那种 - 以自己的感觉来帮助身边的人做决定的行为，通常还有点暗戳戳。",
-            "content_html": "<p>最近看了一部10集的美剧BEEF，纯粹是因为黄阿丽去看的。等一下，去查查BEEF到底是什么的缩写（随着年龄的增长，似乎好奇心也衰减了，居然看完才会去查一个不认识的缩写），当然不是牛肉的意思了。这里应是“不满，结下梁子”的意思。中文译为“怒呛人生”，很信达雅。</p>\n<p>剧中的主要人物一水的亚裔ABC，华裔、韩裔、日裔集齐了。而且老中青都有，还是非常具有代表性的，而且编导团队也好几个亚裔。</p>\n<p>看完以后，似乎能够体会到亚裔族群，在美国社会里的一种困境远不是自己之前想象的那样。相对还是封闭的，尤其是还要应对上一代家族那种掌控感。我能想到的最主要的一个词是：自私。</p>\n<p>这里的自私，指的是那种 - 以自己的感觉来帮助身边的人做决定的行为，通常还有点暗戳戳。</p>",
-            "author": {
-                "name": "zhangv"
-            },
-            "tags": [
-                   "思考"
-            ],
-            "date_published": "2023-05-29T19:10:47+08:00",
-            "date_modified": "2023-05-29T19:10:47+08:00"
         }
     ]
 }
